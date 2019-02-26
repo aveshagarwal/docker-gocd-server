@@ -20,7 +20,7 @@ LABEL gocd.version="19.1.0" \
   description="GoCD server based on alpine linux" \
   maintainer="GoCD <go-cd-dev@googlegroups.com>" \
   gocd.full.version="19.1.0-8469" \
-  gocd.git.sha="3885582184c6f7c4bbbeb94239e5dba6f5f772f4"
+  gocd.git.sha="9dc340a168ea5f3ae74e1261286916159591f26e"
 
 # the ports that go server runs on
 EXPOSE 8153 8154
@@ -40,7 +40,7 @@ RUN \
   apk --no-cache upgrade && \
   apk add --no-cache openjdk8-jre-base git mercurial subversion tini openssh-client bash su-exec curl && \
 # download the zip file
-  curl --fail --location --silent --show-error "https://download.gocd.org/experimental/binaries/19.1.0-8469/generic/go-server-19.1.0-8469.zip" > /tmp/go-server.zip && \
+  curl --fail --location --silent --show-error "https://download.gocd.org/binaries/19.1.0-8469/generic/go-server-19.1.0-8469.zip" > /tmp/go-server.zip && \
 # unzip the zip file into /go-server, after stripping the first path prefix
   unzip /tmp/go-server.zip -d / && \
   rm /tmp/go-server.zip && \
